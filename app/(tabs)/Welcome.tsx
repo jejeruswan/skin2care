@@ -8,7 +8,7 @@ import { RootStackParamList } from '../../src/types/navigation';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
-export const WelcomeScreen = () => {
+export default function WelcomeScreen () {
   const navigation = useNavigation<NavigationProp>();
   return (
     <View style={styles.container}>

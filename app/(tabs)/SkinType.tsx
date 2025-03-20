@@ -10,7 +10,7 @@ import { RootStackParamList } from '../../src/types/navigation';
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
 type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
 
-export const SkinTypeScreen= () => {
+export default function SkinTypeScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
   const [selectedSkinType, setSelectedSkinType] = useState<string | null>(null);

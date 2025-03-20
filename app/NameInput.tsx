@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
-import { QuestionHeader } from "../../src/components/QuestionHeader";
-import { OptionButton } from "../../src/components/OptionButton";
-import { colors, spacing, layout } from "../../src/constants/Theme";
+import { QuestionHeader } from "@/src/components/QuestionHeader";
+import { OptionButton } from "@/src/components/OptionButton";
+import { colors, spacing, layout } from "../src/constants/Theme";
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../src/types/navigation';
+import { RootStackParamList } from '@/src/types/navigation';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
-export const NameInputScreen= () => {
+export default function NameInputScreen () {
   const navigation = useNavigation<NavigationProp>();
   const [name, setName] = useState("");
   const handleNext = () => {

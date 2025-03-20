@@ -9,7 +9,7 @@ import { RootStackParamList } from '../../src/types/navigation';
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Result'>;
 type RouteProps = RouteProp<RootStackParamList, 'Result'>;
 
-export const ResultScreen= () => {
+export default function ResultScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
 

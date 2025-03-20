@@ -7,10 +7,12 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../src/types/navigation';
 
+import { ThemedView } from '@/src/components/ThemedView';
+
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 type RouteProps = RouteProp<RootStackParamList, 'Gender'>;
 
-export const GenderScreen= () => {
+export default function GenderScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
 
@@ -22,27 +24,30 @@ export const GenderScreen= () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.greeting}>HELLO, {name.toUpperCase()}!</Text>
-      <QuestionHeader
-        questionNumber="QUESTION 2"
-        question="What is your gender?"
-      />
-      <View style={styles.optionsContainer}>
-        {genderOptions.map((option) => (
-          <OptionButton
-            key={option}
-            label={option}
-            onPress={() => handleSelect(option)}
-          />
-        ))}
+    <ThemedView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.greeting}>HELLO, {name.toUpperCase()}!</Text>
+        <QuestionHeader
+          questionNumber="QUESTION 2"
+          question="What is your gender?"
+        />
+        <View style={styles.optionsContainer}>
+          {genderOptions.map((option) => (
+            <OptionButton
+              key={option}
+              label={option}
+              onPress={() => handleSelect(option)}
+            />
+          ))}
+        </View>
       </View>
-    </View>
+    </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
