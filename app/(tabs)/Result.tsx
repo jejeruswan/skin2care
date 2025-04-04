@@ -5,6 +5,7 @@ import { colors, typography, spacing, layout } from "../../src/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../src/types/navigation';
+import { ThemedView } from '@/src/components/ThemedView';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Result'>;
 type RouteProps = RouteProp<RootStackParamList, 'Result'>;
@@ -19,7 +20,7 @@ export default function ResultScreen () {
   };
   
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Text style={styles.message}>
         {name}, welcome to your clear skin era. Tap to view the routine we've
         prepared for you.
@@ -29,12 +30,13 @@ export default function ResultScreen () {
         onPress={onComplete}
         style={styles.button}
       />
-    </View>
+    </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,

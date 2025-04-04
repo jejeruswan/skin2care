@@ -6,6 +6,7 @@ import { colors, spacing, layout } from "../src/constants/Theme";
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/src/types/navigation';
+import { ThemedView } from '@/src/components/ThemedView';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
@@ -20,7 +21,7 @@ export default function NameInputScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <QuestionHeader
         questionNumber="QUESTION 1"
         question="What is your name?"
@@ -41,12 +42,13 @@ export default function NameInputScreen () {
           style={styles.button}
         />
       </View>
-    </View>
+    </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
